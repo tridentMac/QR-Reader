@@ -1,0 +1,167 @@
+body{
+    background: rgba(255, 99, 132, 0.2);
+}
+h2{
+    text-align : center;
+    font-family : "Russo One";
+    font-family: "Lexend Deca";
+    font-weight : bold;
+}
+.QR-Box{
+    background : white;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform :  translate(-50%,-50%);
+    width : 500px;
+    height :  auto;
+    
+}
+.QR-Box div{
+    width : 90%;
+    margin : 0px auto;
+}
+
+.qr-code{
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    justify-content : center;
+    height : 0px;
+    opacity: 0;
+    pointer-events :none;
+    transition : height 0.5s ease-in 0s,opacity 0.1s ease-in 0s;
+}
+.Expand-QR{
+    display : flex;
+    height : auto;
+    height : 150px;
+    opacity: 1;
+    pointer-events : all;
+    transition : height 0.5s ease-in 0s,opacity 0.1s ease-in 1s;
+}
+
+#qr-img{
+    width : 100px;
+    height : 100px;
+    margin-top : 30px;
+}
+
+.QR-Box .qr-intro p:first-child{
+    font-family : Poppins;
+    font-size : 18px;
+    font-weight : bold;
+}
+.QR-Box .qr-intro p:nth-child(2){
+    font-family : Poppins;
+    font-size : 16px;
+}
+
+
+
+.QR-Box .sc-up{
+    height : 50px;
+    display: flex;
+    flex-direction : row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.QR-Box .sc-up button,#gen-info{
+    background : white;
+    outline : none; 
+    padding : 5px 20px;
+    height : 35px;
+    width : 25%;
+    border-radius : 7px;
+    border : none;
+    cursor : pointer;
+    font-family: "Lexend Deca";
+    font-weight: bold;
+    background: rgba(255, 99, 132, 0.2);
+    color : black;
+}
+.sub-qr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gen-info{
+    width : 60%;
+    margin-top : 20px;
+    margin-bottom : 20px;
+}
+.QR-Box .sc-up-details{
+    display: flex;
+    flex-direction: column;
+    width : 100%;
+}
+
+.QR-Box .sc-up-details input {
+    margin-top : 20px;
+    height : 40px;
+    font-family : "Lexend Deca";
+    background : white;
+    padding : 10px;
+    box-sizing: content-box;
+    outline : none;
+    border : 1px solid ;
+}
+.QR-Box  .cl-cp{
+    height : 50px;
+    width : 100%;
+    display: flex;
+    flex-direction : row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom : 25px;
+}
+
+.QR-Box .cl-cp button{
+    background : rgba(255, 99, 132, 0.2);
+    outline : none; 
+    padding : 5px 20px;
+    height : 35px;
+    width : 25%;
+    border-radius : 7px;
+    border : none;
+    cursor : pointer;
+    font-family: "Lexend Deca";
+    font-weight: bold;
+    margin-top : 20px;
+    color :  black;
+}
+
+.sc-up button i{
+    padding-left : 5px;
+}
+
+.qr-contents{
+    opacity: 0;
+    pointer-events: none;
+    height : 0;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-in 0s;
+}
+
+.Expand{
+    opacity : 1;
+    pointer-events : all;
+    height : 150px;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-in 0s;
+}
+
+@media screen and (max-width : 900px){
+    .QR-Box{
+        width : 90%;
+        height: auto;
+    }
+    .QR-Box .sc-up button{
+        width : 40%;
+    }
+    .QR-Box .cl-cp button{
+        width : 40%;
+    }
+}
+
+
