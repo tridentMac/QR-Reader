@@ -77,7 +77,7 @@ input.addEventListener('change', e => {
 })
 
 function fetchRequest(formData,myfile){
-    fetch("http://api.qrserver.com/v1/read-qr-code/",{
+    fetch("https://api.qrserver.com/v1/read-qr-code/",{
         method : "POST" , body : formData 
     }).then(res => res.json()).then(d => {
         console.log(d[0].symbol[0].data);
