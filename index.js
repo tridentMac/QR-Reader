@@ -3,7 +3,7 @@ var upbtn = document.getElementById("file-up");
 var flsc = document.getElementById("file-scan");
 var close = document.getElementById("cl");
 var copy = document.getElementById("cp");
-
+var UploadbtnText = document.getElementById("file-up");
 /*
 
 
@@ -50,7 +50,8 @@ function expand(){
 close.addEventListener('click', () => {
     document.getElementById("qr-contents").classList.remove("Expand");
     document.getElementById("qr-code").classList.remove("Expand-QR");
-    document.getElementById("qr-text").value = "Hello World"
+    document.getElementById("qr-text").value = "Hello World";
+    UploadbtnText.innerHTML = "Upload " + `<i class="fa-solid fa-cloud-arrow-up">`;
     input.value = null;
 })
     
@@ -77,9 +78,11 @@ input.addEventListener('change', e => {
 })
 
 function fetchRequest(formData,myfile){
+    UploadbtnText.innerHTML = "Uploading "+  `<i class="fa-solid fa-spinner"></i>`;
     fetch("https://api.qrserver.com/v1/read-qr-code/",{
         method : "POST" , body : formData 
     }).then(res => res.json()).then(d => {
+        UploadbtnText.innerHTML = "Uploaded";
         console.log(d[0].symbol[0].data);
         document.getElementById("qr-code").classList.add("Expand-QR");
         document.getElementById("qr-img").src = URL.createObjectURL(myfile);
