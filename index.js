@@ -4,6 +4,7 @@ var flsc = document.getElementById("file-scan");
 var close = document.getElementById("cl");
 var copy = document.getElementById("cp");
 var UploadbtnText = document.getElementById("file-up");
+var GeneratebtnText = document.getElementById("gen-info");
 /*
 
 
@@ -44,7 +45,14 @@ function expand(){
         alert("Choose a QR");
     }
     else
-    document.getElementById("qr-contents").classList.add("Expand");
+    {
+        document.getElementById("qr-contents").classList.add("Expand");
+        GeneratebtnText.innerHTML = "Generating the info";
+        setTimeout(() => {
+            GeneratebtnText.innerHTML = "Generated the Info";
+        },500);
+    }
+    
 }
 
 close.addEventListener('click', () => {
@@ -52,6 +60,7 @@ close.addEventListener('click', () => {
     document.getElementById("qr-code").classList.remove("Expand-QR");
     document.getElementById("qr-text").value = "Hello World";
     UploadbtnText.innerHTML = "Upload " + `<i class="fa-solid fa-cloud-arrow-up">`;
+    GeneratebtnText.innerHTML = "Generate the info";
     input.value = null;
 })
     
